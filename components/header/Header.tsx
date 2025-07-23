@@ -8,7 +8,6 @@ const Header = () => {
       <header className="hidden lg:block bg-white p-4 shadow-md">
         <div className="container mx-auto flex items-center justify-between">
           <div className='max-w-[717px] flex justify-between items-center w-full'>
-            {/* Logo */}
             <div className="relative w-8 h-8">
               <Image
                 src="/logo.svg"
@@ -35,7 +34,6 @@ const Header = () => {
               </button>
             </div>
 
-            {/* Search Bar */}
             <div className="min-w-[473px] mx-4">
               <div className="relative w-full max-w-[473px] h-[40px]">
                 <input
@@ -65,7 +63,6 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Right Section - Icons and User */}
           <div className="flex items-center space-x-4">
             <button className="flex items-center space-x-1 text-gray-700 hover:text-purple-600">
               <Image
@@ -101,7 +98,6 @@ const Header = () => {
               <NotificationBadge count={100} />
             </div>
 
-            {/* User Avatar */}
             <div className="relative w-10 h-10 rounded-full overflow-hidden">
               <Image
                 src="/avatar.svg"
@@ -111,7 +107,6 @@ const Header = () => {
               />
             </div>
 
-            {/* Add Offer Button */}
             <button
               className="w-[180px] h-[40px] flex items-center justify-center space-x-2
                         bg-gradient-to-r from-orange-500 to-purple-600 text-white

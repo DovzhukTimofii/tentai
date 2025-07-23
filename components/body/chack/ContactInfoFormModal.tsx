@@ -57,7 +57,7 @@ const ContactInfoFormModal: React.FC<ContactInfoFormModalProps> = ({ isOpen, onC
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
-              Полное имя <span className="text-red-500">*</span>
+              FullName <span className="text-red-500">*</span>
             </label>
             <input
               type="text"

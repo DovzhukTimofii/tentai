@@ -63,7 +63,6 @@ const Footer = () => {
   return (
     <footer className="hidden lg:block bg-[#F6F3F7] text-gray-700 py-12">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Column 1: Logo and Copyright */}
         <div className="flex flex-col justify-between">
           <div>
             <div className="flex items-center mb-4">
@@ -81,7 +80,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Column 2: Documents */}
         <div>
           <h3 className="font-semibold text-lg mb-4 text-gray-800">Documents</h3>
           <ul className="space-y-2">
@@ -91,7 +89,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Column 3: Contacts */}
         <div>
           <h3 className="font-semibold text-lg mb-4 text-gray-800">Contacts</h3>
           <ul className="space-y-3">
@@ -113,7 +110,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Column 4: Download App & Language */}
         <div>
           <h3 className="font-semibold text-lg mb-4 text-gray-800">Download Tentai App</h3>
           <div className="flex justify-between max-w-[142px] space-x-3 mb-6">
