@@ -120,7 +120,7 @@ const Order: React.FC = () => {
             <div className="flex justify-between max-w-[157px] h-[22px] w-full items-center text-gray-500 text-sm">
               <div className='flex items-center'>
                 <Image src="/location.svg" alt="loacation" width={17} height={22}/>
-                <span className='pl-1'>{state.routePoints[0]?.name || 'Thailand, Phuket, Rat Burana'}</span>
+                <span className='pl-1'>{state.routePoints[0]?.name || '....'}</span>
               </div>
               <Image src="/dote.svg" alt="dote" width={5} height={20}/>
               <div className='flex items-center justify-between w-[39px] h-[17px] font-semibold'>
@@ -165,9 +165,9 @@ const Order: React.FC = () => {
 
         <div className="p-3 border border-[#D128A166] rounded-[8px] mt-4">
           <p className="text-sm font-medium text-gray-700 mb-2">Point A</p>
-          <p className="text-pink-600 font-semibold mb-4">{state.routePoints[0]?.name || 'Thailand, Phuket, Rat Burana'}, {state.routePoints[0]?.time || '10:00 PM'}</p>
+          <p className="text-pink-600 font-semibold mb-4">{state.routePoints[0]?.name || '....'}, {state.routePoints[0]?.time || '10:00 PM'}</p>
           <p className="text-sm font-medium text-gray-700 mb-2">Point B</p>
-          <p className="text-pink-600 font-semibold">{state.routePoints[1]?.name || 'Thailand, Phuket, Rat Burana'}, {state.routePoints[1]?.time || '21:00 PM'}</p>
+          <p className="text-pink-600 font-semibold">{state.routePoints[1]?.name || '....'}, {state.routePoints[1]?.time || '21:00 PM'}</p>
         </div>
       </div>
 
