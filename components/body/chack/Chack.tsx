@@ -364,7 +364,7 @@ const Chack: React.FC = () => {
           <h3 className="pl-2 font-semibold">Contact information</h3>
         </div>
         <div className=" flex items-start justify-between border rounded-[10px] p-4 border-[#E0E3E4]">
-          <div className='min-w-[326px]'>
+          <div className='sm:min-w-[326px]'>
             <div className="flex justify-between items-center mb-2">
             <span className="text-sm font-medium text-gray-700">Full name</span>
             <span className="text-sm text-gray-900">{state.contactInfo.fullName}</span>
