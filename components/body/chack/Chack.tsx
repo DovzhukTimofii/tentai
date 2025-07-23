@@ -85,7 +85,7 @@ const Chack: React.FC = () => {
       setDistanceError(null);
       const distance = await getDistanceViaGoogleMaps(state.routePoints);
       if (distance === 0 && state.routePoints.filter(p => p.name.trim() !== '').length >= 2) {
-        setDistanceError("Маршрут не найден. Пожалуйста, введите более конкретные адреса (город, улица).");
+        setDistanceError("Can't find city, try another city.");
       }
       dispatch({ type: 'UPDATE_DISTANCE', payload: distance });
       setIsCalculatingDistance(false);
@@ -157,7 +157,7 @@ const Chack: React.FC = () => {
                 type="text"
                 id={`point-${point.id}`}
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                placeholder={`Например: Киев, Украина`}
+                placeholder={`Thailand, Phuket, Rat Burana..`}
                 value={point.name}
                 onChange={(e) => handleRoutePointChange(point.id, 'name', e.target.value)}
               />
@@ -170,7 +170,7 @@ const Chack: React.FC = () => {
                 type="text"
                 id={`time-${point.id}`}
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Например: 10:00 AM"
+                placeholder="Enter hour"
                 value={point.time}
                 onChange={(e) => handleRoutePointChange(point.id, 'time', e.target.value)}
               />
@@ -208,7 +208,6 @@ const Chack: React.FC = () => {
         )}
       </div>
 
-      {/* About the cargo блок */}
       <div className="mb-8">
         <h3 className="text-lg font-medium mb-4 text-orange-500">About the cargo</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">

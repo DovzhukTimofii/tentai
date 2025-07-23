@@ -1,4 +1,3 @@
-// CheckoutContext.tsx
 "use client"
 import React, { createContext, useReducer, useContext, useEffect, ReactNode, Dispatch } from 'react';
 
@@ -27,13 +26,20 @@ export interface ContactInfo {
   phoneNumber: string;
 }
 
+export interface ImageData {
+  src: string;
+  name: string;
+  type: string;
+  size: number;
+}
+
 export interface CheckoutState {
   routePoints: RoutePoint[];
   cargoDetails: CargoDetails;
   comment: string;
   contactInfo: ContactInfo;
   orderSummary: {
-    image: string;
+    image: ImageData | null;
     price: number;
     route: string;
     loadingUnloading: number;
@@ -43,6 +49,7 @@ export interface CheckoutState {
     alternativePrice: number | '';
     alternativePriceActive: boolean;
     costPerKm: number;
+    description: string;
   };
   distanceKm: number;
 }
@@ -77,7 +84,7 @@ export const initialState: CheckoutState = {
     phoneNumber: '+66123456789',
   },
   orderSummary: {
-    image: 'https://placehold.co/100x70/E0F2FE/000000?text=Cargo',
+    image:null,
     price: 0,
     route: '___',
     loadingUnloading: 0,
@@ -87,11 +94,10 @@ export const initialState: CheckoutState = {
     alternativePrice: '',
     alternativePriceActive: false,
     costPerKm: 0,
+    description: '....',
   },
   distanceKm: 0,
 };
-
-
 
 export const checkoutReducer = (state: CheckoutState, action: Action): CheckoutState => {
   switch (action.type) {
@@ -126,6 +132,7 @@ export const checkoutReducer = (state: CheckoutState, action: Action): CheckoutS
         orderSummary: {
           ...initialState.orderSummary,
           ...action.payload.orderSummary,
+          image: action.payload.orderSummary.image || null,
         },
         routePoints: action.payload.routePoints || initialState.routePoints,
       };
@@ -133,7 +140,6 @@ export const checkoutReducer = (state: CheckoutState, action: Action): CheckoutS
       return state;
   }
 };
-
 
 export const CheckoutContext = createContext<{
   state: CheckoutState;
